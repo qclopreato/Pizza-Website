@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quinn's Pizza</title>
+</head>
+<body>
+    <header>
+        <h1><span class="Quinn">Quinn's</span> <span class="Pizza">Pizza</span></h1>
+    </header>
+    <main>
+        <img src="pix/flag.gif" alt="Italian Flag Gif" class="flag">
+        <nav>
+            <ul class="links">
+                <li class="inlinePages">Pizza -- </li>
+                <li class="inlinePages">About Us -- </li>
+                <li class="inlinePages">FAQ</li>
+            </ul>
+        </nav>
+        <form>
+        <fieldset>
+            <legend>Pizza Toppings</legend>
+            <input id="pepperoni" type="checkbox" name="Toppings" value="Pepperoni"> Pepperoni |
+            <input id="sausage" type="checkbox" name="Toppings" value="Sausage"> Sausage |
+            <input id="mushrooms" type="checkbox" name="Toppings" value="Mushrooms"> Mushrooms 
+        </fieldset>
+            <input type="button" id="reset" value="Reset" onclick="resetToppings()">
+            <input type="button" id="submit" value="Submit" onclick="submitToppings()">
+        </form>
+        <div>
+            <p id="final">Blank</p>
+        </div>
+        <script src="js/app.js"></script>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

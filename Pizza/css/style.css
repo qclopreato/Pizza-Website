@@ -1,0 +1,53 @@
+.flag {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 60px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.Quinn {
+  color: green;
+}
+
+.Pizza {
+  color: red;
+}
+
+nav {
+  width: auto;
+  border: 4px solid green;
+  margin: 10px;
+  padding: 10px;
+  background: linear-gradient(-45deg, #f80101, #ffffff, #04c00e);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.links {
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.inlinePages {
+  color: black;
+  display: inline-block;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
