@@ -88,3 +88,8 @@ h1 {
 .menutext {
   text-align: center;
 }
+
+#codeSubmission {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
