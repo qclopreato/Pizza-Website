@@ -45,10 +45,17 @@ h1 {
 
 .menuNav {
   width: auto;
-  border: 4px solid green;
-  margin: 10px;
-  padding: 10px;
-  background: white;
+  border: 2px solid green;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: green;
 }
 
 .links {
@@ -97,7 +104,7 @@ h1 {
   border: 5px dotted #bbb;
   width: 90%;
   border-radius: 15px;
-  margin: 0 auto;
+  margin: 10px auto;
   max-width: 600px;
 }
 
@@ -124,3 +131,17 @@ h1 {
 }
 
 /*End specials*/
+
+/*footer*/
+footer {
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(185, 182, 182);
+  text-align: center;
+}
