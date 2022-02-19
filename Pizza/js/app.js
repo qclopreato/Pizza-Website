@@ -70,7 +70,113 @@ function submitToppings(){
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
         return;
+    } else if(pep.checked !== true && sau.checked   !== true && mus.checked !== true) {
+        final.innerHTML = "No Pizza Toppings Selected";
+        dollars = 0;
+        taxDollars = 0;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + taxDollars;
+        return;
     }
+}
+
+function submitSides(){
+    if(fries.checked == true && buf.checked == true && bbq.checked == true){
+        finalSides.innerHTML = "French Fries, Buffalo Wings, and BBQ Wings";
+        dollars += costFries + costBuf + costBbq;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(fries.checked == true && buf.checked == true && bbq.checked !== true){
+        finalSides.innerHTML = "French Fries and Buffalo Wings";
+        dollars += costFries + costBuf;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(fries.checked == true && buf.checked !== true && bbq.checked !== true){
+        finalSides.innerHTML = "French Fries";
+        dollars += costFries;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(fries.checked !== true && buf.checked == true && bbq.checked !== true){
+        finalSides.innerHTML = "Buffalo Wings";
+        dollars += costBuf;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(fries.checked !== true && buf.checked !== true && bbq.checked == true){
+        finalSides.innerHTML = "BBQ Wings";
+        dollars += costBbq;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(fries.checked !== true && buf.checked == true && bbq.checked == true){
+        finalSides.innerHTML = "Buffalo Wings and BBQ Wings";
+        dollars += costBuf + costBbq;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(fries.checked == true && buf.checked !== true && bbq.checked == true){
+        finalSides.innerHTML = "French Fries and BBQ Wings";
+        dollars += costFries + costBbq;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(fries.checked !== true && buf.checked !== true && bbq.checked !== true){
+        finalSides.innerHTML = "No Sides Selected";
+        dollars = 0;
+        taxDollars = 0;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + taxDollars;
+        return;
+    }
+}
+
+function submitDesserts(){
+    if(cherry.checked == true && mango.checked == true){
+        finalDesserts.innerHTML = "Dessert Pizza with Cherry and Mango";
+        dollars += costCherry + costMango;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(cherry.checked == true && mango.checked !== true){
+        finalDesserts.innerHTML = "Dessert Pizza with Cherry";
+        dollars += costCherry;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(cherry.checked !== true && mango.checked == true){
+        finalDesserts.innerHTML = "Dessert Pizza with Mango";
+        dollars += costMango;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(cherry.checked !== true && mango.checked !== true){
+        finalDesserts.innerHTML = "No Desserts Selected";
+        dollars += 0;
+        taxDollars = 0;
+        document.getElementById(`dollars`).innerHTML = `$` + dollars;
+        document.getElementById(`plusdollars`).innerHTML = `$` + taxDollars;
+        return;
+    }
+}
+
+function myFunction(){
+    submitToppings();
+    submitSides();
+    submitDesserts();
+    return;
 }
 
 function resetToppings(){
@@ -82,5 +188,11 @@ function resetToppings(){
     bbq.checked = false;
     cherry.checked = false;
     mango.checked = false;
-    final.innerHTML = " ";
+    final.innerHTML = ` `;
+    finalSides.innerHTML = ` `;
+    finalDesserts.innerHTML = ` `;
+    dollars = 0;
+    document.getElementById(`dollars`).innerHTML = `$` + dollars;
+    taxDollars = dollars;
+    document.getElementById(`plusdollars`).innerHTML = `$` + taxDollars;
 }
