@@ -21,7 +21,10 @@ h1 {
 .flagNav {
   width: auto;
   border: 4px solid green;
-  margin: 10px;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 10px;
   padding: 10px;
   background: linear-gradient(-45deg, #f80101, #ffffff, #04c00e);
   background-size: 200% 200%;
@@ -56,22 +59,17 @@ h1 {
 }
 
 .inlinePages {
-  color: black;
   display: inline-block;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .inlineOptions {
-  color: black;
   display: inline-block;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 #carousel {
   width: 100%;
   height: 375px;
   background-color: rgb(255, 167, 167);
-
   overflow: scroll;
   white-space: nowrap;
 }
@@ -93,3 +91,36 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/*Specials*/
+.coupon {
+  border: 5px dotted #bbb;
+  width: 90%;
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.container {
+  padding: 2px 16px;
+  background-color: #f1f1f1;
+}
+
+.promo {
+  background: rgb(231, 255, 123);
+  padding: 3px;
+}
+
+.expire {
+  font-size: 75%;
+}
+
+.coupontitle {
+  text-align: center;
+}
+
+.couponabout {
+  text-align: center;
+}
+
+/*End specials*/
