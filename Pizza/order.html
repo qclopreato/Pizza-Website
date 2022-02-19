@@ -24,7 +24,7 @@
         </nav>
         <form>
         <fieldset>
-            <legend>Pizza Toppings</legend>
+            <legend>Pizza</legend>
             <input id="pepperoni" type="checkbox" name="Toppings" value="Pepperoni"> Pepperoni ($1.75) |
             <input id="sausage" type="checkbox" name="Toppings" value="Sausage"> Sausage ($1.50) |
             <input id="mushrooms" type="checkbox" name="Toppings" value="Mushrooms"> Mushrooms ($1.00)
@@ -36,7 +36,7 @@
             <input id="bbqWings" type="checkbox" name="Sides" value="BBQ Wings"> BBQ Wings ($6.00)
         </fieldset>
         <fieldset>
-            <legend>Dessert Pizza Toppings</legend>
+            <legend>Dessert Pizza</legend>
             <input id="cherryPizza" type="checkbox" name="Desserts" value="Cherry Dessery Pizza"> Cherry ($1.50) |
             <input id="mangoPizza" type="checkbox" name="Desserts" value="Mango Pizza"> Mango ($2.00)
         </fieldset>
@@ -44,14 +44,14 @@
             <input type="text" id="codeSubmission" onfocus="this.value=''" value="Enter Discount Code" maxlength="5">
         </div>
             <input type="button" id="reset" value="Reset" onclick="resetToppings()">
-            <input type="button" id="submit" value="Submit" onclick="submitToppings()">
+            <input type="button" id="submit" value="Submit" onclick="myFunction()">
         </form>
         <div>
             <p>Order Summary:</p>
             <ul>
-                <li><span id="final"> </span></li>
-                <li><span id="finalSides"> </span></li>
-                <li><span id="finalDesserts"> </span></li>
+                <li>Pizza: <span id="final"> </span></li>
+                <li>Sides: <span id="finalSides"> </span></li>
+                <li> Dessert Pizza: <span id="finalDesserts"> </span></li>
             </ul>
         </div>
         <div>
