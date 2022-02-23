@@ -1,24 +1,18 @@
 let pep = document.getElementById(`pepperoni`);
 let sau = document.getElementById(`sausage`);
 let mus = document.getElementById(`mushrooms`);
-let fries = document.getElementById(`fries`);
-let buf = document.getElementById(`buffaloWings`);
-let bbq = document.getElementById(`bbqWings`);
-let cherry = document.getElementById(`cherryPizza`);
-let mango = document.getElementById(`mangoPizza`);
+let sml = document.getElementById(`small`);
+let med = document.getElementById(`medium`);
+let lrg = document.getElementById(`large`);
 let final = document.getElementById(`final`);
-let finalSides = document.getElementById(`finalSides`);
-let finalDesserts = document.getElementById(`finalDesserts`);
 let dollars = 0;
 let taxDollars = 0;
 const costPep = 1.75;
 const costSau = 1.50;
 const costMus = 1.00;
-const costFries = 2.00;
-const costBuf = 6.00;
-const costBbq = 6.00;
-const costCherry = 1.50;
-const costMango = 2.00;
+const costSml = 5.00;
+const costMed = 6.50;
+const costLrg = 7.00;
 
 document.querySelectorAll(`.carousel`).forEach(carousel => {
     const items = carousel.querySelectorAll(`.carousel__item`);
@@ -48,55 +42,174 @@ document.querySelectorAll(`.carousel`).forEach(carousel => {
     //Select the first item on the pages
     items[0].classList.add(`carousel__item--selected`);
     buttons[0].classList.add(`carousel__button--selected`);
-})
+});
 
-
-function submitToppings(){
+function submitPizza(){
+if (sml.checked == true){
     if (pep.checked == true && sau.checked == true && mus.checked == true){
-        final.innerHTML = "Pizza with Pepperoni, Sausage, and Mushrooms";
-        dollars += costPep + costSau + costMus;
+        final.innerHTML = "Small pizza with pepperoni, sausage, and mushrooms";
+        dollars += costPep + costSau + costMus + costSml;
         taxDollars = dollars * 1.06;
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
         return;
-    } else if(pep.checked == true && sau.checked == true && mus.checked !== true) {
-        final.innerHTML = "Pizza with Pepperoni and Sausage";
-        dollars += costPep + costSau;
+    }
+    else if(pep.checked == true && sau.checked == true && mus.checked !== true) {
+        final.innerHTML = "Small pizza with pepperoni and sausage";
+        dollars += costPep + costSau + costSml;
         taxDollars = dollars * 1.06;
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
         return;
     } else if(pep.checked == true && sau.checked !== true && mus.checked == true) {
-        final.innerHTML = "Pizza with Pepperoni and Mushrooms";
-        dollars += costPep + costMus;
+        final.innerHTML = "Small pizza with pepperoni and mushrooms";
+        dollars += costPep + costMus + costSml;
         taxDollars = dollars * 1.06;
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
         return;
     } else if(pep.checked == true && sau.checked !== true && mus.checked !== true) {
-        final.innerHTML = "Pizza with Pepperoni";
-        dollars += costPep;
+        final.innerHTML = "Small pizza with pepperoni";
+        dollars += costPep + costSml;
         taxDollars = dollars * 1.06;
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
         return;
     } else if(pep.checked !== true && sau.checked == true && mus.checked == true) {
-        final.innerHTML = "Pizza with Sausage and Mushrooms";
-        dollars += costSau + costMus;
+        final.innerHTML = "Small pizza with sausage and mushrooms";
+        dollars += costSau + costMus + costSml;
         taxDollars = dollars * 1.06;
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
         return;
     } else if(pep.checked !== true && sau.checked == true && mus.checked !== true) {
-        final.innerHTML = "Pizza with Sausage";
-        dollars += costSau;
+        final.innerHTML = "Small pizza with sausage";
+        dollars += costSau + costSml;
         taxDollars = dollars * 1.06;
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
         return;
     } else if(pep.checked !== true && sau.checked !== true && mus.checked == true) {
-        final.innerHTML = "Pizza with Mushrooms";
-        dollars += costMus;
+        final.innerHTML = "Small pizza with mushrooms";
+        dollars += costMus + costSml;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked   !== true && mus.checked !== true) {
+        final.innerHTML = "No Pizza Toppings Selected";
+        dollars = 0;
+        taxDollars = 0;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + taxDollars;
+        return;
+    }
+}else if (med.checked == true){
+    if (pep.checked == true && sau.checked == true && mus.checked == true){
+        final.innerHTML = "Medium pizza with pepperoni, sausage, and mushrooms";
+        dollars += costPep + costSau + costMus + costMed;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    }
+    else if(pep.checked == true && sau.checked == true && mus.checked !== true) {
+        final.innerHTML = "Medium pizza with pepperoni and sausage";
+        dollars += costPep + costSau + costMed;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked == true && sau.checked !== true && mus.checked == true) {
+        final.innerHTML = "Medium pizza with pepperoni and mushrooms";
+        dollars += costPep + costMus + costMed;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked == true && sau.checked !== true && mus.checked !== true) {
+        final.innerHTML = "Medium pizza with pepperoni";
+        dollars += costPep + costMed;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked == true && mus.checked == true) {
+        final.innerHTML = "Medium pizza with sausage and mushrooms";
+        dollars += costSau + costMus + costMed;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked == true && mus.checked !== true) {
+        final.innerHTML = "Medium pizza with sausage";
+        dollars += costSau + costMed;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked !== true && mus.checked == true) {
+        final.innerHTML = "Medium pizza with mushrooms";
+        dollars += costMus + costMed;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked   !== true && mus.checked !== true) {
+        final.innerHTML = "No Pizza Toppings Selected";
+        dollars = 0;
+        taxDollars = 0;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + taxDollars;
+        return;
+    }
+}else if (lrg.checked == true){
+    if (pep.checked == true && sau.checked == true && mus.checked == true){
+        final.innerHTML = "Large pizza with pepperoni, sausage, and mushrooms";
+        dollars += costPep + costSau + costMus + costLrg;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    }
+    else if(pep.checked == true && sau.checked == true && mus.checked !== true) {
+        final.innerHTML = "Large pizza with pepperoni and sausage";
+        dollars += costPep + costSau + costLrg;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked == true && sau.checked !== true && mus.checked == true) {
+        final.innerHTML = "Large pizza with pepperoni and mushrooms";
+        dollars += costPep + costMus + costLrg;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked == true && sau.checked !== true && mus.checked !== true) {
+        final.innerHTML = "Large pizza with pepperoni";
+        dollars += costPep + costLrg;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked == true && mus.checked == true) {
+        final.innerHTML = "Large pizza with sausage and mushrooms";
+        dollars += costSau + costMus + costLrg;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked == true && mus.checked !== true) {
+        final.innerHTML = "Large pizza with sausage";
+        dollars += costSau + costLrg;
+        taxDollars = dollars * 1.06;
+        document.getElementById(`dollars`).innerHTML = "$" + dollars;
+        document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
+        return;
+    } else if(pep.checked !== true && sau.checked !== true && mus.checked == true) {
+        final.innerHTML = "Large pizza with mushrooms";
+        dollars += costMus + costLrg;
         taxDollars = dollars * 1.06;
         document.getElementById(`dollars`).innerHTML = "$" + dollars;
         document.getElementById(`plusdollars`).innerHTML = "$" + Math.round(taxDollars * 100)/100;
@@ -110,118 +223,21 @@ function submitToppings(){
         return;
     }
 }
-
-function submitSides(){
-    if(fries.checked == true && buf.checked == true && bbq.checked == true){
-        finalSides.innerHTML = "French Fries, Buffalo Wings, and BBQ Wings";
-        dollars += costFries + costBuf + costBbq;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(fries.checked == true && buf.checked == true && bbq.checked !== true){
-        finalSides.innerHTML = "French Fries and Buffalo Wings";
-        dollars += costFries + costBuf;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(fries.checked == true && buf.checked !== true && bbq.checked !== true){
-        finalSides.innerHTML = "French Fries";
-        dollars += costFries;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(fries.checked !== true && buf.checked == true && bbq.checked !== true){
-        finalSides.innerHTML = "Buffalo Wings";
-        dollars += costBuf;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(fries.checked !== true && buf.checked !== true && bbq.checked == true){
-        finalSides.innerHTML = "BBQ Wings";
-        dollars += costBbq;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(fries.checked !== true && buf.checked == true && bbq.checked == true){
-        finalSides.innerHTML = "Buffalo Wings and BBQ Wings";
-        dollars += costBuf + costBbq;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(fries.checked == true && buf.checked !== true && bbq.checked == true){
-        finalSides.innerHTML = "French Fries and BBQ Wings";
-        dollars += costFries + costBbq;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(fries.checked !== true && buf.checked !== true && bbq.checked !== true){
-        finalSides.innerHTML = "No Sides Selected";
-        dollars = 0;
-        taxDollars = 0;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + taxDollars;
-        return;
-    }
 }
 
-function submitDesserts(){
-    if(cherry.checked == true && mango.checked == true){
-        finalDesserts.innerHTML = "Dessert Pizza with Cherry and Mango";
-        dollars += costCherry + costMango;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(cherry.checked == true && mango.checked !== true){
-        finalDesserts.innerHTML = "Dessert Pizza with Cherry";
-        dollars += costCherry;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(cherry.checked !== true && mango.checked == true){
-        finalDesserts.innerHTML = "Dessert Pizza with Mango";
-        dollars += costMango;
-        taxDollars = dollars * 1.06;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + Math.round(taxDollars * 100)/100;
-        return;
-    } else if(cherry.checked !== true && mango.checked !== true){
-        finalDesserts.innerHTML = "No Desserts Selected";
-        dollars += 0;
-        taxDollars = 0;
-        document.getElementById(`dollars`).innerHTML = `$` + dollars;
-        document.getElementById(`plusdollars`).innerHTML = `$` + taxDollars;
-        return;
-    }
-}
 
 function myFunction(){
-    submitToppings();
-    submitSides();
-    submitDesserts();
-    return;
+    submitPizza();
 }
 
 function resetToppings(){
+    sml.checked = false;
+    med.checked = false; 
+    lrg.checked = false;
     pep.checked = false;
     sau.checked = false;
     mus.checked = false;
-    fries.checked = false;
-    buf.checked = false;
-    bbq.checked = false;
-    cherry.checked = false;
-    mango.checked = false;
     final.innerHTML = ` `;
-    finalSides.innerHTML = ` `;
-    finalDesserts.innerHTML = ` `;
     dollars = 0;
     document.getElementById(`dollars`).innerHTML = `$` + dollars;
     taxDollars = dollars;
