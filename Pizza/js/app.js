@@ -14,6 +14,10 @@ const costSml = 5.00;
 const costMed = 6.50;
 const costLrg = 7.00;
 
+function confirmationFunction(){
+    document.location.href = `confirmation.html`;
+}
+
 document.querySelectorAll(`.carousel`).forEach(carousel => {
     const items = carousel.querySelectorAll(`.carousel__item`);
     const buttonsHtml = Array.from(items, () => {
@@ -273,7 +277,6 @@ if (sml.checked == true){
     }
 }
 }
-
 
 function myFunction(){
     document.getElementById(`submit`).disabled = true;
