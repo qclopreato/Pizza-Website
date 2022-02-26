@@ -8,7 +8,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>Quinn's Pizza</title>
 </head>
-<body>
+<body onload="randomNumber()">
     <header>
         <h1><span class="Quinn">Quinn's</span> <span class="Pizza">Pizza</span></h1>
     </header>
@@ -24,6 +24,9 @@
         </nav>
         <div>
             <p id="confirmationText">Thank you! Your order has been submitted!</p>
+        </div>
+        <div>
+            <p id="confirmationText">Your order ID number is: <span id="firstNumber"></span><span id="secondNumber"></span><span id="thirdNumber"></span></p>
         </div>
 </body>
 <footer>
