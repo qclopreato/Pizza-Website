@@ -258,3 +258,8 @@ footer {
   width: 100%;
 }
 
+/*Confirmation Page*/
+
+#confirmationText {
+  text-align: center;
+}
