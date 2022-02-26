@@ -278,6 +278,7 @@ if (sml.checked == true){
 }
 }
 
+
 function myFunction(){
     document.getElementById(`submit`).disabled = true;
     submitPizza();
@@ -296,4 +297,13 @@ function resetToppings(){
     taxDollars = dollars;
     document.getElementById(`plusdollars`).innerHTML = `$` + taxDollars;
     document.getElementById(`submit`).disabled = false;
+}
+
+function randomNumber(){
+    let firstNumber = document.getElementById(`firstNumber`);
+    let secondNumber = document.getElementById(`secondNumber`);
+    let thirdNumber = document.getElementById(`thirdNumber`);
+    firstNumber.innerHTML = Math.floor(Math.random()*9);
+    secondNumber.innerHTML = Math.floor(Math.random()*9);
+    thirdNumber.innerHTML = Math.floor(Math.random()*9);
 }
