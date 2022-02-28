@@ -28,9 +28,9 @@ header {
   margin-left: 0px;
   margin-bottom: 0px;
   padding: 10px;
-  background: linear-gradient(-45deg, #f80101, #ffffff, #04c00e);
-  background-size: 200% 200%;
-  animation: gradient 10s ease infinite;
+  background: linear-gradient(-45deg, #f80101, #ffffff, #ffffff, #04c00e);
+  background-size: 175% 175%;
+  animation: gradient 20s ease infinite;
 }
 
 @keyframes gradient {
