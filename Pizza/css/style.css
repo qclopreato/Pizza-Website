@@ -12,19 +12,21 @@ h1 {
 
 .Quinn {
   color: green;
+  background-color: white;
 }
 
 .Pizza {
   color: red;
+  background-color: white;
 }
 
-.flagNav {
+header {
   width: auto;
-  border: 4px solid green;
+  /*border: 1px solid green;*/
   margin-top: 10px;
   margin-right: 0px;
   margin-left: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   padding: 10px;
   background: linear-gradient(-45deg, #f80101, #ffffff, #04c00e);
   background-size: 200% 200%;
@@ -41,6 +43,17 @@ h1 {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.siteNav {
+  width: auto;
+  border: 2px solid green;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: white;
 }
 
 .menuNav {
@@ -138,7 +151,7 @@ footer {
 }
 
 .homeDiv {
-  border: 5px solid red;
+  border: 2px solid red;
   padding: 5px;
 }
 
@@ -248,6 +261,10 @@ footer {
   max-width: 300px;
   width: 100%;
   height: 75%;
+}
+
+.pizzaMenu {
+  text-align: center;
 }
 
 /*End Menu*/
